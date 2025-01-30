@@ -1,0 +1,33 @@
+{% extends 'headbase.html' %}
+
+{% block extra_head %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/mainPageStyle.css' %} "/>
+  <script defer src="{% static 'js/mainpage.js' %}"></script>
+  <script defer src="{% static 'js/UpdateInfo.js'%} "></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Update Page</title>
+{% endblock extra_head %}
+
+{% block content %}       
+        <div class="head">Update Home Page</div>
+    <div class="content">
+            <br>
+            <h1>
+                FCAI-Student-Update :
+            </h1>
+            <div class="marginedited">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }} 
+                    <button class="slBtn" value="submit"">Save Changes</button>
+                </form>
+                <a href="{% url 'updatehome' %}">
+                    <button class="slBtn" value="submit">Cancel</button>
+                </a>
+                    
+            </div>
+            
+</div>
+</body>
+{% endblock content %}

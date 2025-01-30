@@ -1,0 +1,91 @@
+/* Body Styling */
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Content Styling */
+.content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 30%;
+    max-height: 70%;
+}
+
+.content h1 {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+/* Input Styling */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus  {
+    border-color: #007bff;
+}
+
+/* Icon Styling */
+.fa {
+    margin-right: 10px;
+    color: #666;
+}
+
+#registerBtn {
+    min-width: 70px;
+    max-width: 120px; /* Adjust this value as needed */
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(51, 51, 53);
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 0 rgb(0, 95, 87);
+    transition: ease-out 0.4s;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 3px solid;
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    padding: 0 10px; /* Add padding to ensure text doesn't touch the edges */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* This will add an ellipsis if the text is too long */
+}
+
+
+#registerBtn:hover {
+    box-shadow: inset 6vw 0px 0px 0px rgb(192, 190, 172);
+    cursor: pointer;
+    color: rgb(51, 51, 53);
+}

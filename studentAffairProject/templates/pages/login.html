@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+    {% load static %}
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href=" {% static 'css/pages/login_style.css' %} "/>
+    <link rel="stylesheet" href=" {% static 'css/ButtonStyle.css' %} "/>
+    <script src="{% static 'js/login.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <h1> Log in</h1>
+        <div class="smallTap">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                {% endfor %}
+                <br>
+            {% endif %}
+            <form action="{% url 'user_login' %}" method="POST" id="form">
+                {% csrf_token %}
+                <div>
+                    <i class="fa fa-envelope"></i> Email: <input placeholder=" Enter your E-mail..." type="email" name="Email" id = "Email" required>
+                    <br> <br>
+                    <i class="fa fa-lock"></i> password: <input  placeholder=" Enter your Password..." type="password" name= "Password" id="Password" required>
+                </div>
+                <div>
+                    <button class="slBtn" type="submit" id = "btnLogin">Login</button>
+                </div>
+            </form>
+            <div> You don't have an account? </div>
+            <form action="{% url 'registerbtn' %}" method="POST">
+                {% csrf_token %}
+                <button class="" type="submit" id="registerBtn">Register</button></div>
+            </form>
+        </div>
+    </div>
+</body>
+
+

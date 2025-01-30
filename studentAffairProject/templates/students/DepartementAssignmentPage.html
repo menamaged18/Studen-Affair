@@ -1,0 +1,38 @@
+{% extends 'headbase.html' %}
+
+{% block extra_head %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/mainPageStyle.css' %} "/>
+  <!-- <script defer src="{% static 'js/Departement-Assignment-Page.js'} "></script> -->
+  <title>Department Assignmet Page</title>
+{% endblock extra_head %}
+
+{% block content %}      
+        <div class="head">Department Assignment Page</div>
+        <div class="content">
+            <br>
+            <form action="{% url 'Departement' form.id %}" method="POST">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>student Information</legend>
+                    <p> <strong>Student ID:</strong><input type = "text" name = "ID" placeholder="{{form.id}}" readonly/></p><br>
+                    <p> <strong>Name:</strong> <input type = "text" name = "fname" placeholder="{{form.fname}}" readonly/></p><br>
+                    <form method="post" Align="left">
+                    <h3>Departement Choise:
+                    <select name="Departement">
+                        <option value="{{form.departement}}">{{form.departement}}</option>
+                        <option type = "select" value="CS">CS</option>
+                        <option type = "select" value="IT">IT</option>
+                        <option type = "select" value="IS">IS</option>
+                        <option type = "select" value="AI">AI</option>
+                        <option type = "select" value="DS">DS</option>
+                        <br>
+                    </select>
+                    <input type="submit" name="Confirm">
+                    </h3>
+                </fieldset>
+            </form>
+        </div>
+</body>
+{% endblock content %}
+

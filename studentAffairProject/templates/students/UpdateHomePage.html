@@ -1,0 +1,52 @@
+{% extends 'headbase.html' %}
+
+{% block extra_head %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/mainPageStyle.css' %} "/>
+  <script defer src="{% static 'js/mainpage.js' %}"></script>
+  <!-- <script defer src="{% static 'js/udpateHome.js'%} "></script> -->
+  <title>Update Home Page</title>
+{% endblock extra_head %}
+
+{% block content %} 
+      
+        <div class="head">Update student info</div>
+        <div class="content">
+                
+                    <table>
+                        <thead>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>ID</th>
+                            <th>Level</th>
+                            <th>GPA</th>
+                            <th>Gender</th>
+                            <th>Date of Birth</th>
+                            <th>Mobile Phone</th>
+                            <th>Status</th>
+                            <th>Departement</th>
+                            <th>Update Information</th>
+                        </thead>
+    
+                        <tbody id="TBody">
+                            {% for student in students %}
+                            <tr>    
+                                <td>{{student.first_name}}</td>
+                                <td>{{student.last_name}}</td>
+                                <td>{{student.student_id}}</td>
+                                <td>{{student.level}}</td>
+                                <td>{{student.gpa}}</td>
+                                <td>{{student.gender}}</td>
+                                <td>{{student.date_of_birth}}</td>
+                                <td>{{student.phone_number}}</td>
+                                <td>{{student.status}}</td>
+                                <td>{{student.department}}</td>
+                                <td><a href="{% url 'updateinfo' student.student_id %}"><button class="slBtn" id="UpdateInfo">Update</button></a>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+    
+                    </table>
+        </div>
+</body>
+{% endblock content %}

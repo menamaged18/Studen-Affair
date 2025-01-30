@@ -1,0 +1,69 @@
+
+select{
+    background-color: rgb(51, 51, 53);
+    color: white;
+}
+
+input{
+    
+    background-color: rgb(51, 51, 53);
+    color: white;
+}
+
+input:focus{
+    background-color: rgb(36, 36, 42);
+    transform: scale(1.1);
+}
+
+input::placeholder{
+    color: white;
+}
+
+.btn {
+    width: 170px;
+    height: 75px;
+    color: white;
+    background-color: rgb(51, 51, 53);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 rgb(0, 95, 87);
+    transition: ease-out 0.4s;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid;
+    display: inline;
+}
+
+.btn:hover {
+    box-shadow: inset 160px 0px 0px 0px rgb(192, 190, 172);
+    cursor: pointer;
+    color: rgb(51, 51, 53);
+}
+
+.slBtn {
+    min-width: 70px;
+    max-width: 120px; /* Adjust this value as needed */
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(51, 51, 53);
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 0 rgb(0, 95, 87);
+    transition: ease-out 0.4s;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 3px solid;
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    padding: 0 10px; /* Add padding to ensure text doesn't touch the edges */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* This will add an ellipsis if the text is too long */
+}
+
+.slBtn:hover {
+    box-shadow: inset 4vw 0px 0px 0px rgb(192, 190, 172);
+    cursor: pointer;
+    color: rgb(51, 51, 53);
+}
+
+

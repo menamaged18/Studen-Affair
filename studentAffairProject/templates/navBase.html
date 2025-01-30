@@ -1,0 +1,17 @@
+<nav>
+    <button type="button" id="toggle-btn">
+      <i class="fa fa-bars"></i>
+    </button>
+    <span>Menu</span>
+    <ul class="sidebar-menu">
+      <li><a href="{% url 'mainpage' %} "><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="{% url 'tutorial' %} "><i class="fa fa-book"></i>Tutorial</a></li>
+      <!-- <li><a href="{% url 'user_login' %} "><i class="fa fa-user"></i>Login</a></li> -->
+      <li><a href="{% url 'search' %} "><i class="fa fa-search"></i>Search</a></li>
+      <li><a href="{% url 'view' %} "><i class="fas fa-eye"></i>view</a></li>
+      <li><a href="{% url 'updatehome' %} "><i class="fas fa-edit"></i>Update</a></li>
+      <li><a href="{% url 'addstudent' %} "><i class="fas fa-user-plus"></i>Add Student</a></li>
+      <li><a href="{% url 'deletestudent' %} "><i class="fas fa-user-minus"></i>Delete Student</a></li>
+      <li id="bgModeBtn"><a href="#"><i id="bgModeIcon" class="fa fa-sun"></i>Mode</a></li>
+    </ul>
+</nav>

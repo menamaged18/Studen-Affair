@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="english">
+  {% extends 'headbase.html' %}
+  {% block extra_head %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/mainPageStyle.css' %} "/>
+  <title>Main Page</title>
+  {% endblock extra_head %}
+ {% block content %} 
+<head>
+
+</head>     
+        <div class="head">Main Student Page</div>
+        <div class="content">
+            <br>
+            <div>
+                <h1 style="font-size: 60px;">WELCOME</h1>
+            </div>
+            <div class="projects">
+                <a href="{% url 'user_login' %}"><button class="btn"> Students Affairs </button></a>
+                <button  class="btn"> Human Resources</button>
+                <button  class="btn"> Higher Studies </button>
+                <button class="btn"> Laboratory Tracking </button>
+            </div>
+        </div>
+</body>
+{% endblock content %}
+
+
+{% comment %}<h1>main page clear comment to make it work</h1>{% endcomment %}

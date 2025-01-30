@@ -1,0 +1,75 @@
+{% extends 'headbase.html' %}
+
+{% block extra_head %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/mainPageStyle.css' %} "/>
+  <link rel="stylesheet" href="{% static 'js/search.js' %}">
+  <title>Search Page</title>
+{% endblock extra_head %}
+
+{% block content %} 
+        <div class="head">Search Page</div>
+        <div class="content">
+            <br>
+            <div>
+                <h1>
+                    <span> Search Page</span>
+                    </span>
+                </h1>
+            </div>
+            <br> <br>
+            <div class="smallTap">
+                <form method="get" action="{% url 'search_page' %}">
+                    <div id="special_div">
+                        <input type="search" name="q" placeholder="Search">
+                        <label>By:</label>
+                        <select id="select" name="search_by">
+                            <option value="choose">choose</option>
+                            <option value="ID">ID</option>
+                            <option value="Name">Name</option>
+                            <option value="Level">Level</option>
+                            <option value="GPA">GPA</option>
+                            <option value="Departement">Departement</option>
+                        </select>
+                        <button class="slBtn" type="submit" id="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="part">
+                <table class="centertable">
+                    <thead>
+                        <th>Name</th>
+                        <!-- <th>Last Name</th> -->
+                        <th>ID</th>
+                        <th>Level</th>
+                        <th>GPA</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Mobile Phone</th>
+                        <th>Status</th>
+                        <th>Departement</th>
+                        <th>Edit Information</th>
+                    </thead>
+                    <tbody id="TBody">
+                        {% for student in students %}
+                            <tr>    
+                                <td>{{student.first_name}} {{student.last_name}}</td>
+                                <td>{{student.student_id}}</td>
+                                <td>{{student.level}}</td>
+                                <td>{{student.gpa}}</td>
+                                <td>{{student.gender}}</td>
+                                <td>{{student.date_of_birth}}</td>
+                                <td>{{student.phone_number}}</td>
+                                <td>{{student.status}}</td>
+                                <td>{{student.department}}</td>
+                                <td><a href="{% url 'edit_all_student_information' student.student_id %}"><button class="slBtn" id="Update" >Update</button></a></td> 
+                                {% comment %}<td><a><button class="slBtn" id="Update" >Update</button></a></td>{% endcomment %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+{% endblock content %}
