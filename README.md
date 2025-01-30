@@ -1,4 +1,4 @@
-# Studen-Affair
+# Student-Affair
 ## Student Affair is a Django web project where it has:
 1. login/signup for employees and there is a superuser(manger) which he can access the database unlike normal users
 2. add student page where employees can add student to the database
