@@ -87,12 +87,38 @@ WSGI_APPLICATION = "studentAffairProject.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+###########################################################################
+# default data base
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+##################################################################################
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Ensure the /tmp directory exists
+TMP_DIR = "/tmp"
+if not os.path.exists(TMP_DIR):
+    os.makedirs(TMP_DIR)  # Create /tmp if it doesn't exist
+
+DB_PATH = os.path.join(TMP_DIR, "db.sqlite3")
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": DB_PATH,
     }
 }
+
+# Ensure the database file exists and is writable
+if not os.path.exists(DB_PATH):
+    with open(DB_PATH, "w"):
+        pass  # Create the empty file
+os.chmod(DB_PATH, 0o777)  # Give full permissions
+
 
 
 # Password validation
