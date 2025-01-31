@@ -53,6 +53,11 @@ form {
     gap: 1.2rem;
 }
 
+#regform {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
 .smallTap {
     padding: 1rem 0;
 }
